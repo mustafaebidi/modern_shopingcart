@@ -66,7 +66,7 @@ const Navbar=({show})=>{
                             return(
                                 <li key={index } style={{width: `${width}px`}} ref={typesButtons.current[index]} className={`${globalData.products.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>ds(index)}>
                                     <div className='icon-type'>
-                                        <img src={`../../../image/${name.toLowerCase()}.png`} alt=""/>
+                                        <img style={{"opacity":`${name === "all" ? 0.5 :1}`}} src={`../../../image/${name.toLowerCase()}.png`} alt=""/>
                                     </div>
                                     <div className='text'>{name}</div>
                                 </li>

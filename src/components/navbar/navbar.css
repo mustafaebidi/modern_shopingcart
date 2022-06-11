@@ -17,6 +17,7 @@
 .logo{
     font-weight: bold;
     font-size: 20px;
+    color: black;
 }
 
 .fav img{
@@ -80,6 +81,9 @@
 .types .con-li li .text{
     position: absolute;
     opacity: 0;
+    text-transform: capitalize;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
 }
 
 

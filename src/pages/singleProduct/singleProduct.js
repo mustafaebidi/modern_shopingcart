@@ -14,6 +14,8 @@ const Singleproduct=()=>{
 
     const [item,setItem]=useState()
 
+    const [chosenAttributs,setChosenAttributs]=useState([])
+
     const mainPhone=useRef()
 
     const altPhono=useRef()
@@ -21,6 +23,18 @@ const Singleproduct=()=>{
     altPhono.current=[useRef(),useRef(),useRef(),useRef()]
 
 
+    console.log(chosenAttributs,"asa")
+
+
+    const addClassActiveToAttribut=(index,name)=>{
+
+        let newArr=[...chosenAttributs]
+        newArr[index]=name
+
+        console.log(newArr)
+        setChosenAttributs(newArr)
+
+    }
     const setSrcOfPhotoToMainPhoto=(a)=>{
         console.log(altPhono.current[a].current.src)
         mainPhone.current.src=altPhono.current[a].current.src
@@ -34,6 +48,10 @@ const Singleproduct=()=>{
             return item.id === +id
 
         })
+        console.log()
+        let numberOfAttributs=Object.keys(item.atrubite).length
+        let filledArray = new Array(numberOfAttributs).fill(0)
+        setChosenAttributs(filledArray)
 
         setItem(item)
 
@@ -49,14 +67,14 @@ const Singleproduct=()=>{
                                 <div className="the-group">
                                     {item.src.slice(1).map((src,index)=>{
                                         return(
-                                            <img ref={altPhono.current[index]} onClick={()=>setSrcOfPhotoToMainPhoto(index)} src={`../../../api/${item.type}/${item.name}/${src}.jpg`} alt=""/>
+                                            <img key={index} ref={altPhono.current[index]} onClick={()=>setSrcOfPhotoToMainPhoto(index)} src={`../../../api/${item.type}/${item.name}/${src}.jpg`} alt=""/>
                                         )
                                         
                                     })}
                                 </div>
 
                                 <div>
-                                    <img ref={mainPhone} src={`../../../api/${item.type}/${item.name}/${item.src[1]}.jpg`} alt=""/>
+                                    <img ref={mainPhone} className="main-poster" src={`../../../api/${item.type}/${item.name}/${item.src[1]}.jpg`} alt=""/>
                                 </div>
 
                             </div>
@@ -65,14 +83,14 @@ const Singleproduct=()=>{
                                 <h3>{item.name}</h3>
 
                                 <div className="atrubite">
-                                    {Object.keys(item.atrubite).map((key)=>{
+                                    {Object.keys(item.atrubite).map((key,index_parent)=>{
                                         return(
-                                            <div>
+                                            <div key={(index_parent+80)*2}>
                                                 <h4>{key}</h4>
                                                 <div className="choices">
-                                                    {item.atrubite[key].map((value)=>{
+                                                    {item.atrubite[key].map((value,index)=>{
                                                         return(
-                                                                <div>{value}</div>
+                                                                <div key={index+80} className={`${chosenAttributs[index_parent] === value ?"active" :"" }`} onClick={()=>addClassActiveToAttribut(index_parent,value)}>{value}</div>
                                                         )
                                                     })}
                                                 </div>
@@ -83,6 +101,7 @@ const Singleproduct=()=>{
                                   
                                     })}
                                 </div>
+                                <div className="add-to">Add To card</div>
                             </div>
                         </div>
                     </div>

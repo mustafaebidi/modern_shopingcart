@@ -19,7 +19,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    background-color: black;
+    background-color: #ffcf2d;
     width: fit-content;
     padding: 10px 30px;
     border-radius: 6px;
@@ -27,6 +27,8 @@
 }
 .beginning .started a{
     color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    
 }
 .beginning .info{
     margin-top: 15px;
@@ -42,6 +44,7 @@
     max-width: 600px;
     line-height: 1.7;
     color: #00000082;
+    font-size: 15px;
 
 
 }

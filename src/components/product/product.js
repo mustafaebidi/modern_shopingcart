@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 
 import "./product.css"
-
+import {ReactComponent as ReactLogo} from "../../heart2.svg"
 const Product=({name,type,price,id})=>{
     
     return(
         <div className="product">
             <Link to={`/item/${id}`}>
+                <div className='con-svg'>
+                    <ReactLogo/>
+                </div>
                 <div className="con-img">
                     <img src={`../../../api/${type}/${name}/main.jpg`} alt=""  />
                 </div>
