@@ -7,7 +7,12 @@
     align-items: center;
     text-align: center;
 }
+.empty img{
+    width: 100%;
+     
+}
 .empty > div{
+    padding: 10px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -27,5 +32,6 @@
     width: fit-content;
     border-radius: 6px;
     cursor: pointer;
+    font-weight: 300;
 
 }
