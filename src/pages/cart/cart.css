@@ -14,9 +14,15 @@
     align-items: center;
     gap: 30px;
 }
+.empty h2{
+    font-family: 'Fredoka One', cursive;
+
+
+}
 .empty .shop{
+
     padding: 10px 25px;
-    background-color: black;
+    background-color: #ff982d;
     color: white;
     width: fit-content;
     border-radius: 6px;

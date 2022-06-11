@@ -1,5 +1,5 @@
 
-import {  useEffect, useRef, useState } from 'react';
+import {  useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setType } from '../../store/productsSlice';
@@ -12,26 +12,20 @@ const types=["phone","monitor","all","laptop"]
 const Navbar=({show})=>{
     const globalData=useSelector((state)=>state)
 
-    const[typesButtons ,setRefs ] =useState([useRef(),useRef(),useRef(),useRef()])
+    const typesButtons =useRef([useRef(),useRef(),useRef(),useRef()])
     const pointer=useRef()
     const dispath=useDispatch()
 
     
 
-    const removeActiveClass=()=>{
-        typesButtons.forEach(element => {
-            element.current.classList.remove("active")
-            
-        });
 
-    }
 
 
 
 
     const ds=(index)=>{
 
-        let posElment=typesButtons[index].current.offsetLeft
+        //let posElment=typesButtons[index].current.offsetLeft
         let elementName=types[index].toLowerCase()
         
 
@@ -42,8 +36,6 @@ const Navbar=({show})=>{
         dispath(setType(elementName))
 
     }
-
-
 
 
     let width=80
@@ -72,7 +64,7 @@ const Navbar=({show})=>{
                         {types.map((name,index)=>{
 
                             return(
-                                <li key={index } style={{width: `${width}px`}} ref={typesButtons[index]} className={`${globalData.products.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>ds(index)}>
+                                <li key={index } style={{width: `${width}px`}} ref={typesButtons.current[index]} className={`${globalData.products.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>ds(index)}>
                                     <div className='icon-type'>
                                         <img src={`../../../image/${name.toLowerCase()}.png`} alt=""/>
                                     </div>

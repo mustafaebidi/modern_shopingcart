@@ -1,0 +1,13 @@
+
+.error{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.error img{
+    object-fit: contain;
+    max-width: 400px;
+    width: 100%;
+}

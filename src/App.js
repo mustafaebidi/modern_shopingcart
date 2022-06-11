@@ -1,4 +1,4 @@
- 
+
 
 import { Fragment } from "react";
 import {
@@ -12,6 +12,7 @@ import {
 import Navbar from "./components/navbar/navbar";
 import Beginning from "./pages/beginning/beginning";
 import Cart from "./pages/cart/cart";
+import Error from "./pages/error/error";
 import Favorite from "./pages/favorite/favorite";
 import Home from "./pages/home/home";
 
@@ -23,8 +24,7 @@ function App() {
 
   const location =useLocation()
 
-  //const [showUlTypes,setShowUlTypes]=useState()
-  console.log(location);
+
 
 
   return (
@@ -43,6 +43,9 @@ function App() {
 
                 <Route path="/item/:id" element={<Singleproduct />} />
                 <Route path="/beginning" element={<Beginning />} />
+                <Route path="/error" element={<Error />} />
+
+
 
 
         </Routes>
@@ -59,4 +62,3 @@ function App() {
 }
 
 export default App;
-                //{<Route path="/home" element={<Home/>} />}
