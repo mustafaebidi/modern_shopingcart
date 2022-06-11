@@ -1,0 +1,16 @@
+GP3,750.00
+
+
+Model name	XIAOMI
+Wireless carrier	Blue
+Brand	Xiaomi
+Form factor	Foldable Case
+Memory storage capacity	2 GB
+OS	Android 10.0
+Colour	Granite Grey
+Cellular technology	GSM
+SIM card slot count	Dual SIM
+Model year	2021
+
+About this item
+Dimensions: 164.9 x 77 x 9 millimetersProcessor: MediaTekResolution: 720 x 1600 Pixels

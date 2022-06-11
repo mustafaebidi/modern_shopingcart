@@ -1,0 +1,27 @@
+EGP29,600.00
+
+
+
+Brand	Acer
+Series	PH315-54-760S
+Screen size	15.6 Inches
+Colour	Black
+Hard disk size	512 GB
+Operating System	Windows 11 Home
+Graphics card description	RTX 3060
+Graphics co-processor	NVIDIA GeForce RTX 3060
+Hard disk description	Solid state drive
+Item weight	5.07 Pounds
+
+
+About this item
+Extreme Performance: Crush the competition with the impressive power and speed of the 11th Generation Intel Core i7-11800H processor, featuring 8 cores and 16 threads to divide and conquer any task or run your most intensive games
+RTX, It's On: The latest NVIDIA GeForce RTX 3060 (6GB dedicated GDDR6 VRAM) is powered by award-winning Ampere architecture with new Ray Tracing Cores, Tensor Cores, and streaming multiprocessors supporting DirectX 12 Ultimate for the ultimate gaming performance
+Blazing-Fast Display: This 15.6" Full HD (1920 x 1080) IPS LED-backlit display with 16:9 aspect ratio features an incredibly fast 144Hz refresh rate and 3ms Overdrive response time for the gamers who demand the best visual experiences
+Internal Specifications: 16GB DDR4 3200MHz memory (2 DDR4 Slots Total, Maximum 32GB); 512GB PCIe Gen 4 SSD (2 x PCIe M.2 Slots/1 x 2.5" Hard Drive Bay Available)
+Prioritize Your Gameplay: Intel Killer DoubleShot Pro with Ethernet E2600 and Wi-Fi 6 AX1650i lets you use Wi-Fi and Ethernet at the same time, and have total control over priority traffic to maximize speed, throughput, and control
+Cooling Perfected: Acer Helios 300 uses a 5th Generation AeroBlade Fan with 89 blades designed to increase air intake and keeps your system at a nice, cool temp. Also, allowing you to maximize your performance by reducing throttling for better sustained performance.
+With Alexa Show Mode, you can use your PC as a full-screen interactive experience that features rich visuals and lets you talk to Alexa from across the room.
+Superior Sound: DTS:X Ultra enhances your favorite games, movies, and music with high-end surround sound through the dual speakers, and an authentic audio experience when you use your favorite headphones
+Ports For All Accessories: USB 3.2 Gen 2 Type-C (Thunderbolt 4 and USB Charging), 2 USB 3.2 Gen 1, USB 3.2 Gen 2 (Power-off Charging), HDMI 2.1 with HDCP support, Mini DisplayPort 1.4, Headphone/Speaker/Line-out Jack, Ethernet (RJ-45), DC-in for AC Adapter
+The Right Fit: 14.31" W x 10.04" D x 0.90" H; 5.07 lbs; One-Year International Travelers Limited Warranty (ITW); Up to 6 hours Lithium-Ion Battery Life (Battery life was tested using video playback)

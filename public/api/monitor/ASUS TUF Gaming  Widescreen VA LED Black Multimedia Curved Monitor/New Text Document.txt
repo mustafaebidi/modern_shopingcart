@@ -1,0 +1,21 @@
+EGP4,999.00
+
+
+
+Brand	ASUS
+Series	ASUS TUF VG24VQE
+Screen size	24 Inches
+Colour	Black
+Special features	Anti Glare Screen, Adaptive Sync, Frameless, Flicker-Free
+Resolution	FHD 1080p Ultra Wide
+Item weight	3.63 Kilograms
+Connectivity technology	VGA, DisplayPort, HDMI
+Specific uses for product	Business, Gaming, Personal, programming, video editing, Gaming
+
+
+About this item
+23.6-inch Full HD (1920 x 1080) 1500R gaming monitor with ultrafast 165Hz refresh rate (supports 144Hz) designed for professional gamers and immersive gameplay
+ASUS Extreme Low Motion Blur (ELMB ) technology enables a 1ms response time (MPRT), eliminating ghosting for sharp gaming visuals
+FreeSync Premium technology to eliminate screen tearing and choppy frame rates
+Shadow Boost enhances image details in dark areas, brightening scenes without over-exposing bright areas
+Supports both Adaptive-Sync with NVIDIA GeForce* graphics cards and FreeSync with AMD Radeon graphics cards *Compatible with NVIDIA GeForce GTX 10 series, GTX 16 series, RTX 20 series and newer graphics cards

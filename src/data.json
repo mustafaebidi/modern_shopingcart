@@ -1,0 +1,151 @@
+{
+    "items": [
+      {
+
+        "name": "Apple iPhone 13 Pro Max",
+        "id": 10,
+        "isFreeShipping": true,
+        "price": 26845 ,
+        "atrubite":{
+          "capacity":["512G","1T"],
+          "color":["Silver","Graphite","Sierra Blue","Gold"]
+        },
+        "src": ["main","7161nwSVX9L._AC_SL1500_","812rT8Q7qHL._AC_SL1500_",
+            "81DzfVDR-lL._AC_SL1500_","71zwao302EL._AC_SL1500_","61i8Vjb17SL._AC_SL1500_","61H1IxON5HL._AC_SL1500_"],
+        "type":"phone"
+
+      },
+      {
+        "name": "Xiaomi Redmi 9A Dual SIM Mobile Phone",
+        "id": 11,
+        "isFreeShipping": true,
+        "price": 3700,
+        "atrubite":{
+            
+            "capacity":["64G","128G"],
+            "color":["Blue","Granite Grey","Peacock Green"]
+        },
+        "src": ["main","51a4n4GmzdL._AC_","41F7qu-NKdL._AC_"],
+        "type":"phone"
+
+      },
+      {
+        "name": "Samsung Galaxy Note 20 Ultra Mobile Phone",
+        "id": 12,
+        "isFreeShipping": false,
+        "price": 18499,
+        "atrubite":{
+
+            "capacity":["512G","1T"],
+            "color":["Black","Mystic Bronze"]
+
+        },
+        "src": ["main","61FX4BUT+LL._AC_SL1500_","61ZwXJXDjnL._AC_SL1500_","616w8FEh3vL._AC_SL1495_","619p5xW4Y5L._AC_SL1500_"],
+        "type":"phone"
+
+      },
+      {
+        "name": "Samsung Galaxy A52 Dual",
+        "id": 13,
+        "isFreeShipping": true,
+        "atrubite":{
+            "capacity":["64","128G"],
+            "color":["White","Blue"]
+
+        },
+        "price": 6800,
+        "src": ["main","71P79YS9VVL._AC_SL1444_","31JUD4joGaL._AC_","31+IJ3sXTuL._AC_","21R2FfBkP5L._AC_"],
+        "type":"phone"
+
+
+      },
+      {
+        "name":"Samsung Odyssey Ultra Wide QLED Gaming Monitor 1MS 240HZ- LC49G95TSSMXZN",
+        "id": 14,
+        "isFreeShipping": true,
+        "price": 21000  ,
+
+
+        "atrubite":{
+            "Inch":["35","49"],
+            "color":["White","black"]
+
+        },
+        "src": ["main","71AWutVExLL._AC_SL1271_","61wYbw-OJBL._AC_SL1496_","61hGMw5j-FL._AC_SL1406_","51qjta-fWNL._AC_SL1500_","51P5ztGw-gL._AC_SL1402_"],
+        "type":"monitor"
+
+      },
+      {
+
+
+        "name": "Acer Predator UltraWide Curved DTS UW-UXGA Gaming Monitor",
+        "id": 15,
+        "isFreeShipping": false,
+        "price": 26500,
+
+        "atrubite":{
+            "Inch":["27","35"]
+        },
+        "src": ["main","41XJfvMf2fL._AC_"],
+        "type":"monitor"
+
+      },
+      {
+        "name": "ASUS TUF Gaming  Widescreen VA LED Black Multimedia Curved Monitor",
+        "id": 16,
+        "isFreeShipping": true,
+        "price": 4999,
+        "atrubite":{
+            "Inch":["27","35"]
+        },
+        "src": ["main","819Sr7JLfML._AC_SL1500_","713CIebzNEL._AC_SL1500_","518y6QvlNQL._AC_SL1500_","81dlXk49bZL._AC_SL1500_"],
+        "type":"monitor"
+
+      },
+      {
+        "name": "HP Computer Monitor LED  X0N05AA",
+        "id": 17,
+        "isFreeShipping": true,
+
+        "price": 1850,
+
+
+        "atrubite":{
+            "Inch":["17","23"]
+        },
+
+        "src": ["main","61x3OqMiNvL._AC_SL1500_","61V2AvXVedL._AC_SL1500_","61okKsGG47L._AC_SL1500_","61FWjE9K+nL._AC_SL1500_"],
+        "type":"monitor"
+
+      },
+      {
+        "name": "Acer Predator Helios 300 PH315-54-760S Gaming Laptop",
+        "id": 18,
+        "isFreeShipping": false,
+        "price": 29600 ,
+        "atrubite":{
+            "SSD":["512G","1T"],
+            "Video Card":["GeForce RTX 3060","GeForce RTX 3070"]
+        },
+        "src": ["main","71nz3cIcFOL._AC_SL1500_","61TIUFElkyS._AC_SL1500_","71vL2LES4PS._AC_SL1500_","51uoVEyVp3S._AC_SL1500_","51IIEZxVdCS._AC_SL1500_"],
+        "type":"laptop"
+
+
+      },
+      {
+        "name": "IdeaPad Gaming 3 15ACH6 Laptop",
+        "id": 19,
+        "isFreeShipping": false,
+        "price": 16100,
+        "atrubite":{
+            "SSD":["512G","1T"],
+            "Video Card":["GeForce RTX 3060","GeForce RTX 3070"],
+            "Processor":["Ryzen 5 5600H 6-Cores","Ryzen 7 7700H 8-Cores"]
+        },
+        "src": ["main","51PptKyIYbL._AC_SL1000_","51AqPuGOozL._AC_SL1000_","51gN2+9lixL._AC_SL1000_","41Z8D0GpG3L._AC_SL1000_","41O7ta2kFrL._AC_SL1000_","41K20QBq3QL._AC_SL1000_"],
+        "type":"laptop"
+
+      }
+
+    ]
+}

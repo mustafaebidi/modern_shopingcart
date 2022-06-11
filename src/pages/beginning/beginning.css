@@ -1,0 +1,47 @@
+
+
+.beginning{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.beginning img{
+    max-width: 100%;
+}
+
+
+.beginning .started{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    width: fit-content;
+    padding: 10px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.beginning .started a{
+    color: white;
+}
+.beginning .info{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.beginning .info p{
+    max-width: 600px;
+    line-height: 1.7;
+    color: #00000082;
+
+
+}
