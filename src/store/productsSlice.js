@@ -19,9 +19,12 @@ const productsSlice = createSlice({
     initialState,
     reducers: {
       addToCart: (state,action) => {
+        return state
+
         
       },
       removeFromCart: (state,action) => {
+        return state
         
       },
       setType: (state, action) => {

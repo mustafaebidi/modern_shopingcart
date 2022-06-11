@@ -5,16 +5,9 @@ import { Provider } from 'react-redux'
 import './index.css';
 import App from './App';
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  useLocation,
-
-} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-//        <React.StrictMode>
 
 root.render(
 
@@ -23,7 +16,6 @@ root.render(
     <BrowserRouter>
         <App />
     </BrowserRouter>
-
   </Provider>
 
 

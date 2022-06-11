@@ -1,5 +1,4 @@
-import { useState } from "react"
-import { useSelector,useDispatch } from "react-redux"
+import { useSelector } from "react-redux"
 import Product from "../product/product"
 import "./products.css"
 
@@ -30,7 +29,6 @@ const Products=()=>{
                 return(
                     <Product key={element.id} index={index} {...element} />
                 )
-
             })}
  
         </div>
