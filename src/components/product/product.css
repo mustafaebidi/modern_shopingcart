@@ -5,6 +5,7 @@
     border: 1px solid rgba(0, 0, 0, 0.218);
     overflow: hidden;
     padding: 40px;
+    min-width: 250px;
 
 }
 
@@ -21,7 +22,7 @@
 
 }
 
-.con-img{
+.product .con-img{
 
     width: 167px;
     height: 167px;
@@ -32,6 +33,7 @@
 
 .product-name{
     margin-top: 20px;
+    text-align: center;
 }
 
 .product img{
@@ -50,7 +52,8 @@
 }
 .product a  .con-svg{
     position: absolute;
-    right: 0;
+    top: -10px;
+    right: -10px;
     width: 35px;
     height: 35px;
     padding: 8px;
@@ -70,12 +73,22 @@
     stroke-opacity: 0;
 }
 
+.product a  .con-svg:hover svg path:nth-child(2){
+    stroke: white;
+}
+
+.product a  .con-svg:hover svg path:nth-child(3){
+    stroke: white;
+}
+
 
 .buy{
     margin-top: 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .price{

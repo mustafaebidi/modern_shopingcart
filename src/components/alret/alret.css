@@ -1,0 +1,16 @@
+
+
+#pop-up{
+    position: fixed;
+    left: 50px;
+    top: 100px;
+    z-index: 555;
+
+}
+
+.massage{
+    padding: 10px;
+    width: fit-content;
+    border-radius: 5px;
+    box-shadow: 1px 10px 10px rgba(197, 195, 195, 0.279);
+}

@@ -20,6 +20,8 @@ const Singleproduct=()=>{
 
     const altPhono=useRef()
 
+    const [choosenImg,setChoosenImg]=useState(0)
+
     altPhono.current=[useRef(),useRef(),useRef(),useRef()]
 
 
@@ -36,8 +38,9 @@ const Singleproduct=()=>{
 
     }
     const setSrcOfPhotoToMainPhoto=(a)=>{
-        console.log(altPhono.current[a].current.src)
-        mainPhone.current.src=altPhono.current[a].current.src
+        //console.log(altPhono.current[a].current.src)
+        setChoosenImg(a)
+        //mainPhone.current.src=altPhono.current[a].current.src
 
     }
 
@@ -67,14 +70,17 @@ const Singleproduct=()=>{
                                 <div className="the-group">
                                     {item.src.slice(1).map((src,index)=>{
                                         return(
-                                            <img key={index} ref={altPhono.current[index]} onClick={()=>setSrcOfPhotoToMainPhoto(index)} src={`../../../api/${item.type}/${item.name}/${src}.jpg`} alt=""/>
+                                            <div className={`${choosenImg ===  index ?"active" :""}`} onClick={()=>setSrcOfPhotoToMainPhoto(index)}>
+                                                <img key={index} ref={altPhono.current[index]} src={`../../../api/${item.type}/${item.name}/${src}.jpg`} alt=""/>
+
+                                            </div>
                                         )
                                         
                                     })}
                                 </div>
 
-                                <div>
-                                    <img ref={mainPhone} className="main-poster" src={`../../../api/${item.type}/${item.name}/${item.src[1]}.jpg`} alt=""/>
+                                <div className="poster">
+                                    <img ref={mainPhone} className="main-poster" src={`../../../api/${item.type}/${item.name}/${item.src[choosenImg+1]}.jpg`} alt=""/>
                                 </div>
 
                             </div>
@@ -98,8 +104,13 @@ const Singleproduct=()=>{
 
                                             </div>
                                         )
-                                  
+
                                     })}
+                                </div>
+                                <div className="price">
+                                    <h4>Price</h4>
+                                    <h5>$ {item.price}</h5>
+                                    
                                 </div>
                                 <div className="add-to">Add To card</div>
                             </div>

@@ -3,7 +3,13 @@
 const Favorite=()=>{
 
     return(
-        <div></div>
+
+        <div className="container">
+            <div className="favorute">
+                
+            </div>
+        </div>
+        
 
     )
 }

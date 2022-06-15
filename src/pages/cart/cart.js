@@ -14,7 +14,9 @@ const Cart=()=>{
 
     if(globalData.products.itemsInCart.length){
         return(
-            <div>dsada</div>
+            <div className="container">
+                <CartItems/>
+            </div>
         )
 
     }
@@ -34,6 +36,80 @@ const Cart=()=>{
 
     }
 
+
+}
+
+const CartItems=()=>{
+
+    const globalData=useSelector((state)=>state.products.itemsInCart)
+
+
+    return(
+
+                <div>
+                    {globalData.map((item)=>{
+
+                        return(
+                
+                                <div className="content">
+
+                                    <div className="po">   
+                                        <div className="img-con">
+                                            <img alt="" src={`../../../api/${item.type}/${item.name}/main.jpg`}/>
+                                        </div>
+
+                                        <div className="name-product">{item.name}</div>
+
+                                    </div>
+
+
+                                    <div className="attribute">
+                                        {Object.keys(item.attribute).map((name)=>{
+
+                                            
+                                            return(
+                                                <div>
+                                                    <h3>{name}</h3>
+                                                    <div className="choice">
+                                                        {item.attribute[name].map((name,index)=>{
+                                                            let key=Object.keys(name)[0]
+                                                            return(
+                                                                <div className={name[key] ?"active" :""}>{key}</div>
+                                                                
+                                                            )
+
+                                                        })} 
+                                                    </div>
+                                                </div>
+
+                                            )
+
+                                        })}
+                
+
+                                    </div>
+
+
+
+                                    <div className="control">
+                                        <div>+</div>
+                                        <h4>55</h4>
+                                        <div>-</div>
+
+                                    </div>
+
+                                </div>
+                    
+                        )
+
+
+                    })}                
+
+                </div>
+
+
+
+    )
 
 }
 

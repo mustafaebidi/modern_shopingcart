@@ -25,14 +25,10 @@ const Navbar=({show})=>{
 
     const ds=(index)=>{
 
-        //let posElment=typesButtons[index].current.offsetLeft
         let elementName=types[index].toLowerCase()
         
 
-        //removeActiveClass()
-        //typesButtons[index].current.classList.add("active")
 
-        //pointer.current.style.left=`${posElment}px`
         dispath(setType(elementName))
 
     }
@@ -53,7 +49,7 @@ const Navbar=({show})=>{
 
                     </Link>
 
-                    <Link to="/" className='fav'>
+                    <Link to="/favorite" className='fav'>
                         <img src="../../../image/heart1.png" alt=""/>
                     </Link>
                 </ul>
