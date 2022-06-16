@@ -26,8 +26,6 @@ const productsSlice = createSlice({
 
         let id=+action.payload.id
 
-
-
         let itemsInCard=[...state.itemsInCart]
 
 
@@ -36,10 +34,7 @@ const productsSlice = createSlice({
           let prouducts=itemsInCard.filter((item)=>{
             return +item.id === id
           })
-          console.log(prouducts,"ahmed")
           return prouducts
-
-
 
         }
 
@@ -74,7 +69,6 @@ const productsSlice = createSlice({
             ///All product contain this iD
             let allSame=getAllSameProduct()
 
-
             for(let i=0;i<allSame.length;i++){
               if(checkAttribute(allSame[i])){
                 return true
@@ -83,9 +77,6 @@ const productsSlice = createSlice({
               
             }
             return false
-
-
-
           }
 
           else
@@ -108,7 +99,6 @@ const productsSlice = createSlice({
           let newAtrubite={}
           Object.entries(item.atrubite).forEach((element,ind) => {
               const [key,value]=element
-              console.log(Object.entries(item.atrubite))
               let arr=[]
               value.forEach((element2,index) => {
                   if(index === values[ind]){
@@ -166,7 +156,6 @@ const productsSlice = createSlice({
 
         })
 
-        console.log(exist)
         if(exist){
 
         }
@@ -259,4 +248,4 @@ const productsSlice = createSlice({
 
 export default productsSlice.reducer
 
-export const {addToCart,removeFromCart,setType,setStateOfItem,addToFavorite,removeFromFavourite,increaseQuantity,getSumOfProducts}=productsSlice.actions
+export const {addToCart,removeFromCart,setType,setStateOfItem,addToFavorite,removeFromFavourite,increaseQuantity,getSumOfProducts,decreaseQuantity}=productsSlice.actions

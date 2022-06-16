@@ -3,12 +3,11 @@ import Product from "../../components/product/product"
 
 
 import uuid from 'react-uuid'
-
+import "./favorite.css"
 
 const Favorite=()=>{
     const globalData=useSelector((state)=>state.products.itemsInFavorite)
 
-    console.log(globalData)
     return(
 
             <div className="favorite">

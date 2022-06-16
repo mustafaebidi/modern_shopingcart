@@ -21,7 +21,10 @@
     
 
 }
-
+.product .close{
+    font-size: 25px;
+    font-weight: bold;
+}
 .product .con-img{
 
     width: 167px;

@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import {increaseQuantity, removeFromCart } from "../../store/productsSlice"
+import {increaseQuantity, removeFromCart,decreaseQuantity } from "../../store/productsSlice"
 import uuid from 'react-uuid'
 
 
+
 import "./cart.css"
-
-
 
 const Cart=()=>{
 
@@ -105,7 +104,7 @@ const CartItems=()=>{
                                     <div className="control">
                                         <div onClick={()=> dispath(increaseQuantity(index))}>+</div>
                                         <h4>{item.quantity}</h4>
-                                        <div>-</div>
+                                        <div onClick={()=> dispath(decreaseQuantity(index))} >-</div>
 
                                     </div>
 

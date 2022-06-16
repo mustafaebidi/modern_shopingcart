@@ -3,29 +3,20 @@ import { Link, useLocation } from 'react-router-dom';
 
 import "./product.css"
 import {ReactComponent as ReactLogo} from "../../heart2.svg"
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart, addToFavorite, removeFromFavourite } from '../../store/productsSlice';
-
 
 
 
 const Product=({name,type,price,id,atrubite})=>{
 
     const location=useLocation()
-    const mustafa=useSelector((state)=>state.products.itemsInCart)
 
     const dispath=useDispatch()
 
-
     const addToCard=(e)=> {
         e.preventDefault()
-        //console.log(mustafa[0])
-        if(mustafa[0]){
-            let r=Object.entries(mustafa[0].attribute)[0][1]
-            let t=Object.entries(r[0])
-            console.log(t[0][1])
 
-        }
         let numberOfAttributs=Object.keys(atrubite).length
         let values = new Array(numberOfAttributs).fill(0)
         
@@ -43,7 +34,6 @@ const Product=({name,type,price,id,atrubite})=>{
     const removeFromFavouritee=(e)=>{
 
         e.preventDefault()
-        console.log(id)
 
         dispath(removeFromFavourite(id))
 
@@ -57,7 +47,7 @@ const Product=({name,type,price,id,atrubite})=>{
 
                 {location.pathname === "/favorite" 
 
-                    ? <div onClick={(e)=>removeFromFavouritee(e)}>x</div> 
+                    ? <div className='close' onClick={(e)=>removeFromFavouritee(e)}>x</div> 
                 
                     :<div  className='con-svg' onClick={(e)=>addToFavoritee(e)} >
                         <ReactLogo/>

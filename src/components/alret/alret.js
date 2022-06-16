@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStateOfItem } from '../../store/productsSlice';
@@ -12,12 +12,13 @@ const Alert=()=>{
     const globalData=useSelector((state)=>state)
     const dispath=useDispatch()
 
+    const globals=useRef()
+
 
     useEffect(()=>{
         if(globalData.products.stateOfItem){
-            console.log(88)
-
-            setTimeout(()=>{
+            clearTimeout(globals.current)
+            globals.current=setTimeout(()=>{
                 dispath(setStateOfItem(""))
             },1000)
         }
