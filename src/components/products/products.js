@@ -25,9 +25,9 @@ const Products=()=>{
 
     return(
         <div className="products">
-            {getData().map((element,index)=>{
+            {getData().map((item,index)=>{
                 return(
-                    <Product key={element.id} index={index} {...element} />
+                    <Product key={item.id} index={index} {...item} />
                 )
             })}
  

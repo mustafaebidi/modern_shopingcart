@@ -10,9 +10,8 @@ import "./navbar.css"
 const types=["phone","monitor","all","laptop"]
 
 const Navbar=({show})=>{
-    const globalData=useSelector((state)=>state)
+    const globalData=useSelector((state)=>state.products)
 
-    const typesButtons =useRef([useRef(),useRef(),useRef(),useRef()])
     const pointer=useRef()
     const dispath=useDispatch()
 
@@ -20,15 +19,9 @@ const Navbar=({show})=>{
 
 
 
-
-
-
     const ds=(index)=>{
 
         let elementName=types[index].toLowerCase()
-        
-
-
         dispath(setType(elementName))
 
     }
@@ -46,7 +39,7 @@ const Navbar=({show})=>{
                 <ul className='store'>
                     <Link to="/cart" className='cart'>
                         <img src="../../../image/shopping-cart.png" alt=""/>
-
+                        {globalData.itemsInCart.length ?<div className='items-number'><div>{globalData.itemsInCart.length}</div></div> :""}
                     </Link>
 
                     <Link to="/favorite" className='fav'>
@@ -60,7 +53,7 @@ const Navbar=({show})=>{
                         {types.map((name,index)=>{
 
                             return(
-                                <li key={index } style={{width: `${width}px`}} ref={typesButtons.current[index]} className={`${globalData.products.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>ds(index)}>
+                                <li key={index } style={{width: `${width}px`}}  className={`${globalData.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>ds(index)}>
                                     <div className='icon-type'>
                                         <img style={{"opacity":`${name === "all" ? 0.5 :1}`}} src={`../../../image/${name.toLowerCase()}.png`} alt=""/>
                                     </div>
@@ -70,7 +63,7 @@ const Navbar=({show})=>{
                             )
 
                         })}
-                        <div  ref={pointer} style={{left:`${types.indexOf(globalData.products.type) * (width ) }px`}} className='pointer'></div>
+                        <div  ref={pointer} style={{left:`${types.indexOf(globalData.type) * (width ) }px`}} className='pointer'></div>
 
 
                     </div>

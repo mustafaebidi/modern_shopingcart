@@ -1,61 +1,43 @@
 import { Fragment, useEffect, useState ,useRef} from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
+import { addToCart } from "../../store/productsSlice"
+import uuid from 'react-uuid'
 
 import "./singleProduct.css"
 
 
 const Singleproduct=()=>{
-    console.log(window.location.pathname)
 
-    const {id}=useParams()
-
+    let {id}=useParams()
     const globalData=useSelector((state)=>state)
-
     const [item,setItem]=useState()
-
     const [chosenAttributs,setChosenAttributs]=useState([])
-
     const mainPhone=useRef()
-
-    const altPhono=useRef()
-
     const [choosenImg,setChoosenImg]=useState(0)
+    const dispath=useDispatch()
 
-    altPhono.current=[useRef(),useRef(),useRef(),useRef()]
-
-
-    console.log(chosenAttributs,"asa")
-
+    id=+id
 
     const addClassActiveToAttribut=(index,name)=>{
-
         let newArr=[...chosenAttributs]
         newArr[index]=name
-
-        console.log(newArr)
         setChosenAttributs(newArr)
-
     }
-    const setSrcOfPhotoToMainPhoto=(a)=>{
-        //console.log(altPhono.current[a].current.src)
-        setChoosenImg(a)
-        //mainPhone.current.src=altPhono.current[a].current.src
 
+    const setSrcOfPhotoToMainPhoto=(a)=>{
+        setChoosenImg(a)
     }
 
 
     useEffect(()=>{
-
         let item=globalData.products.items.find((item)=>{
-            return item.id === +id
-
+            return item.id === id
         })
-        console.log()
-        let numberOfAttributs=Object.keys(item.atrubite).length
-        let filledArray = new Array(numberOfAttributs).fill(0)
-        setChosenAttributs(filledArray)
 
+        let numberOfAttributs=Object.keys(item.atrubite).length
+        let values = new Array(numberOfAttributs).fill(0)
+        setChosenAttributs(values)
         setItem(item)
 
     },[globalData.products.items, id])
@@ -70,8 +52,8 @@ const Singleproduct=()=>{
                                 <div className="the-group">
                                     {item.src.slice(1).map((src,index)=>{
                                         return(
-                                            <div className={`${choosenImg ===  index ?"active" :""}`} onClick={()=>setSrcOfPhotoToMainPhoto(index)}>
-                                                <img key={index} ref={altPhono.current[index]} src={`../../../api/${item.type}/${item.name}/${src}.jpg`} alt=""/>
+                                            <div key={uuid()} className={`${choosenImg ===  index ?"active" :""}`} onClick={()=>setSrcOfPhotoToMainPhoto(index)}>
+                                                <img key={index} src={`../../../api/${item.type}/${item.name}/${src}.jpg`} alt=""/>
 
                                             </div>
                                         )
@@ -91,12 +73,12 @@ const Singleproduct=()=>{
                                 <div className="atrubite">
                                     {Object.keys(item.atrubite).map((key,index_parent)=>{
                                         return(
-                                            <div key={(index_parent+80)*2}>
+                                            <div key={uuid()}>
                                                 <h4>{key}</h4>
                                                 <div className="choices">
-                                                    {item.atrubite[key].map((value,index)=>{
+                                                    {item.atrubite[key].map((value,index_child)=>{
                                                         return(
-                                                                <div key={index+80} className={`${chosenAttributs[index_parent] === value ?"active" :"" }`} onClick={()=>addClassActiveToAttribut(index_parent,value)}>{value}</div>
+                                                                <div key={uuid()} className={`${chosenAttributs[index_parent] === index_child ?"active" :"" }`} onClick={()=>addClassActiveToAttribut(index_parent,index_child)}>{value}</div>
                                                         )
                                                     })}
                                                 </div>
@@ -112,7 +94,7 @@ const Singleproduct=()=>{
                                     <h5>$ {item.price}</h5>
                                     
                                 </div>
-                                <div className="add-to">Add To card</div>
+                                <div className="add-to" onClick={()=> dispath(addToCart({id,values:chosenAttributs})) }>Add To card</div>
                             </div>
                         </div>
                     </div>

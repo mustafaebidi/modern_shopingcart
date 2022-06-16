@@ -36,23 +36,34 @@
 
 }
 
-table{
-    width: 100%;
-}
 
 .content{
     display: flex;
     justify-content: space-between;
-    background-color: #e8e8e8ca;
+    background-color: #e8e8e878;
     padding: 30px 25px;
-    gap: 10px;
+    gap: 20px;
     align-items: center;
     flex-wrap: wrap;
     margin-top: 4px;
     border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+
 }
 
-.img-con{
+.content .close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.content .img-con{
 
     min-width: 80px;
     max-width: 80px;
@@ -66,7 +77,7 @@ table{
     justify-content: center;
     
 }
-.img-con img{
+.content .img-con img{
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
@@ -84,6 +95,8 @@ table{
 
 }
 
+
+
 .control > div{
     padding: 10px;
     width: 40px;
@@ -93,26 +106,32 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: 0.4s;
 
 }
 
- .control > h4{
+.control > div:hover{
+    background-color: rgba(0, 0, 0, 0.252);
+}
+
+.content .control > h4{
     width: 60px;
     text-align: center;
     
 }
 
-.po{
+.content .intro{
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    width: 120px;
+    width: 150px;
     text-align: center;
 }
 
-.attribute{
+.content  .attribute{
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -123,19 +142,19 @@ table{
 }
 
 
-.attribute > div{
+.content .attribute > div{
     display: flex;
     gap: 10px;
     flex-direction: column;
     text-transform: capitalize;
 }
 
-.attribute h5{
+.content  .attribute h5{
     font-weight: 200;
     font-size: 16px;
 }
 
-.choice{
+.content  .choice{
     display: flex;
     gap: 5px;
     justify-content: center;
@@ -157,9 +176,44 @@ table{
 
 }
 
+.cart .checkout{
+    font-family: 'Josefin Sans', sans-serif;
+
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: beige;
+    border-radius: 10px;
+}
+
+.cart .checkout > div{
+    width: fit-content;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #ff982d;
+}
+
+.cart .checkout .finish{
+    color: white;
+    cursor: pointer;
+    background-color: #00b038;
+}
+.total{
+
+    padding: 4px;
+    color: white;
+
+}
+.total-title{
+    color: white;
+}
 @media(max-width:991px){
     .content{
         justify-content: space-evenly;
     }
 
 }
+
