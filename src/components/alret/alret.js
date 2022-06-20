@@ -2,27 +2,27 @@
 import { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { setStateOfItem } from '../../store/productsSlice';
+import { setStateOfProduct } from '../../store/productsSlice';
 import "./alret.css"
 const popUp=document.getElementById("pop-up")
 
 
 const Alert=()=>{
 
-    const globalData=useSelector((state)=>state)
+    const stateOfItem=useSelector((state)=>state.products.stateOfProduct)
     const dispath=useDispatch()
 
     const globals=useRef()
 
 
     useEffect(()=>{
-        if(globalData.products.stateOfItem){
+        if(stateOfItem){
             clearTimeout(globals.current)
             globals.current=setTimeout(()=>{
-                dispath(setStateOfItem(""))
+                dispath(setStateOfProduct(""))
             },1000)
         }
-    },[dispath, globalData.products.stateOfItem])
+    },[dispath, stateOfItem])
 
     const alertMassage={
         "success":{
@@ -35,11 +35,11 @@ const Alert=()=>{
         }
     }
 
-    if(globalData.products.stateOfItem){
-        let innerMassage=(<div className="massage" style={alertMassage[globalData.products.stateOfItem].style}>{alertMassage[globalData.products.stateOfItem].massage}</div>)
+    if(stateOfItem){
+        let innerMassage=(<div className="massage" style={alertMassage[stateOfItem].style}>{alertMassage[stateOfItem].massage}</div>)
 
         return(
-            ReactDOM.createPortal(globalData.products.stateOfItem && innerMassage,popUp)
+            ReactDOM.createPortal(stateOfItem && innerMassage,popUp)
         )
 
     }

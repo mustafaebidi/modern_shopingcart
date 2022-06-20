@@ -17,19 +17,16 @@ const productsSlice = createSlice({
       itemsInCart:[],
       "itemsInFavorite":[],
       type:"all",
-      "stateOfItem":false
+      "stateOfProduct":false
       
     },
     reducers: {
       addToCart: (state,action) => {
         let items=[...state.items]
-
         let id=+action.payload.id
+        const itemsInCard=[...state.itemsInCart]
 
-        let itemsInCard=[...state.itemsInCart]
-
-
-        const getAllSameProduct=()=>{
+        const getAllProductWithSameId=()=>{
 
           let prouducts=itemsInCard.filter((item)=>{
             return +item.id === id
@@ -38,7 +35,7 @@ const productsSlice = createSlice({
 
         }
 
-        function checkAttribute(item){
+        function checkExistAttribute(item){
             
           for(let i=0;i<Object.entries(item.attribute).length;i++){
 
@@ -66,47 +63,39 @@ const productsSlice = createSlice({
 
           if(exsit){
             
-            ///All product contain this iD
-            let allSame=getAllSameProduct()
+            let allSameId=getAllProductWithSameId()
 
-            for(let i=0;i<allSame.length;i++){
-              if(checkAttribute(allSame[i])){
+            for(let i=0;i<allSameId.length;i++){
+              if(checkExistAttribute(allSameId[i])){
                 return true
-                
               }
-              
             }
             return false
+        
           }
 
-          else
-          {
+          else{
             return false
-
           }
 
         }
-
-
         
-        let item=items.find((item)=>{
-          return item.id === action.payload.id
+        let item=items.find((item)=>{return item.id === action.payload.id})
 
-        })
-
-        const handleAttribute=(values)=>{
+        const handleAttribute=(chosenValues)=>{
 
           let newAtrubite={}
-          Object.entries(item.atrubite).forEach((element,ind) => {
-              const [key,value]=element
+
+          Object.entries(item.atrubite).forEach((attribute,ind) => {
+              const [key,values]=attribute
               let arr=[]
-              value.forEach((element2,index) => {
-                  if(index === values[ind]){
-                      arr.push({[element2]:true})
+              values.forEach((value,index) => {
+
+                  if(index === chosenValues[ind]){
+                      arr.push({[value]:true})
                   }
                   else{
-                      arr.push({[element2]:false})
-
+                      arr.push({[value]:false})
                   }
               
               });
@@ -118,8 +107,7 @@ const productsSlice = createSlice({
 
 
         if(checkExsit()){
-          state.stateOfItem="existing"
-
+          state.stateOfProduct="existing"
         }
         else{
 
@@ -132,48 +120,23 @@ const productsSlice = createSlice({
             attribute:handleAttribute(action.payload.values),
             quantity:1
           }
-
           state.itemsInCart.push(itemCart)
-          state.stateOfItem="success"
+          state.stateOfProduct="success"
 
         }
-        
-        
-
-
-
-        
-
-
-
         
       },
 
       addToFavorite:(state,action)=>{
 
-        const exist=state.itemsInFavorite.find((item)=>{
-          return item.id === action.payload
+        const exist=state.itemsInFavorite.find((item)=>{return item.id === action.payload})
 
-        })
-
-        if(exist){
-
-        }
-
-        else
-        {
+        if(!exist){
           let items=[...state.items]
-
-          let item=items.find((item)=>{
-            return item.id === action.payload
-  
-          })
-
+          let item=items.find((item)=>{return item.id === action.payload})
           state.itemsInFavorite.push(item)
-
         }
 
-         
 
 
 
@@ -223,24 +186,13 @@ const productsSlice = createSlice({
 
       },
 
-      getSumOfProducts:(state)=>{
-
-        let sum=0
-        state.itemsInCart.forEach(item => {
-          sum+=item.price*item.quantity
-          
-        });
-        return sum
-
-      },
 
       setType: (state, action) => {
         state.type=action.payload
 
       },
-      setStateOfItem:(state,action) =>{
-        state.stateOfItem=action.payload
-
+      setStateOfProduct:(state,action) =>{
+        state.stateOfProduct=action.payload
       }
     },
   })
@@ -248,4 +200,4 @@ const productsSlice = createSlice({
 
 export default productsSlice.reducer
 
-export const {addToCart,removeFromCart,setType,setStateOfItem,addToFavorite,removeFromFavourite,increaseQuantity,getSumOfProducts,decreaseQuantity}=productsSlice.actions
+export const {addToCart,removeFromCart,setType,setStateOfItem,addToFavorite,removeFromFavourite,increaseQuantity,getSumOfProducts,decreaseQuantity,setStateOfProduct}=productsSlice.actions

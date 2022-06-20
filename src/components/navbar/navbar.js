@@ -1,8 +1,8 @@
 
-import {  useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { setType } from '../../store/productsSlice';
+
 import "./navbar.css"
 
 
@@ -12,14 +12,13 @@ const types=["phone","monitor","all","laptop"]
 const Navbar=({show})=>{
     const globalData=useSelector((state)=>state.products)
 
-    const pointer=useRef()
     const dispath=useDispatch()
 
     
 
 
 
-    const ds=(index)=>{
+    const setTypeOfProducts=(index)=>{
 
         let elementName=types[index].toLowerCase()
         dispath(setType(elementName))
@@ -53,7 +52,7 @@ const Navbar=({show})=>{
                         {types.map((name,index)=>{
 
                             return(
-                                <li key={index } style={{width: `${width}px`}}  className={`${globalData.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>ds(index)}>
+                                <li key={index } style={{width: `${width}px`}}  className={`${globalData.type === name.toLowerCase() ? "active" :"" }`} onClick={()=>setTypeOfProducts(index)}>
                                     <div className='icon-type'>
                                         <img style={{"opacity":`${name === "all" ? 0.5 :1}`}} src={`../../../image/${name.toLowerCase()}.png`} alt=""/>
                                     </div>
@@ -63,7 +62,7 @@ const Navbar=({show})=>{
                             )
 
                         })}
-                        <div  ref={pointer} style={{left:`${types.indexOf(globalData.type) * (width ) }px`}} className='pointer'></div>
+                        <div  style={{left:`${types.indexOf(globalData.type) * (width ) }px`}} className='pointer'></div>
 
 
                     </div>

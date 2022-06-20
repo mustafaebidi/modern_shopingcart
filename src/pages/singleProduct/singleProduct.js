@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState ,useRef} from "react"
+import { Fragment, useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { addToCart } from "../../store/productsSlice"
@@ -10,10 +10,9 @@ import "./singleProduct.css"
 const Singleproduct=()=>{
 
     let {id}=useParams()
-    const globalData=useSelector((state)=>state)
+    const globalData=useSelector((state)=>state.products)
     const [item,setItem]=useState()
     const [chosenAttributs,setChosenAttributs]=useState([])
-    const mainPhone=useRef()
     const [choosenImg,setChoosenImg]=useState(0)
     const dispath=useDispatch()
 
@@ -31,7 +30,8 @@ const Singleproduct=()=>{
 
 
     useEffect(()=>{
-        let item=globalData.products.items.find((item)=>{
+
+        let item=globalData.items.find((item)=>{
             return item.id === id
         })
 
@@ -40,7 +40,7 @@ const Singleproduct=()=>{
         setChosenAttributs(values)
         setItem(item)
 
-    },[globalData.products.items, id])
+    },[globalData.items, id])
     
     return(
         <Fragment>
@@ -62,7 +62,7 @@ const Singleproduct=()=>{
                                 </div>
 
                                 <div className="poster">
-                                    <img ref={mainPhone} className="main-poster" src={`../../../api/${item.type}/${item.name}/${item.src[choosenImg+1]}.jpg`} alt=""/>
+                                    <img className="main-poster" src={`../../../api/${item.type}/${item.name}/${item.src[choosenImg+1]}.jpg`} alt=""/>
                                 </div>
 
                             </div>
@@ -92,7 +92,6 @@ const Singleproduct=()=>{
                                 <div className="price">
                                     <h4>Price</h4>
                                     <h5>$ {item.price}</h5>
-                                    
                                 </div>
                                 <div className="add-to" onClick={()=> dispath(addToCart({id,values:chosenAttributs})) }>Add To card</div>
                             </div>

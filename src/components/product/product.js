@@ -14,31 +14,10 @@ const Product=({name,type,price,id,atrubite})=>{
 
     const dispath=useDispatch()
 
-    const addToCard=(e)=> {
-        e.preventDefault()
 
-        let numberOfAttributs=Object.keys(atrubite).length
-        let values = new Array(numberOfAttributs).fill(0)
-        
-        dispath(addToCart({id,values}))
 
-    }
 
-    const addToFavoritee= (e) => {
-        e.preventDefault()
 
-        dispath(addToFavorite(id))
-
-    }
-
-    const removeFromFavouritee=(e)=>{
-
-        e.preventDefault()
-
-        dispath(removeFromFavourite(id))
-
-    }
-    
     return(
         <div className="product">
             
@@ -47,9 +26,18 @@ const Product=({name,type,price,id,atrubite})=>{
 
                 {location.pathname === "/favorite" 
 
-                    ? <div className='close' onClick={(e)=>removeFromFavouritee(e)}>x</div> 
+                    ? <div className='close' onClick={(e)=>{
+                        e.preventDefault()
+                        dispath(removeFromFavourite(id))
+
+
+
+                    }}>x</div> 
                 
-                    :<div  className='con-svg' onClick={(e)=>addToFavoritee(e)} >
+                    :<div  className='con-svg' onClick={(e)=>{
+                        e.preventDefault()
+                        dispath(addToFavorite(id))
+                    }} >
                         <ReactLogo/>
                     </div>
                 }
@@ -68,7 +56,14 @@ const Product=({name,type,price,id,atrubite})=>{
                             <span className="price-num">{price}</span>
                         </div>
 
-                        <div className="add-to" onClick={(e)=>addToCard(e)}>Add to cart</div>
+                        <div className="add-to" onClick={(e)=>{
+                            e.preventDefault()
+                            let numberOfAttributs=Object.keys(atrubite).length
+                            let values = new Array(numberOfAttributs).fill(0)
+                            
+                            dispath(addToCart({id,values}))
+
+                        }}>Add to cart</div>
                     </div>
 
                 </div>
